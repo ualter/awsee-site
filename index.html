@@ -1,0 +1,256 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+        <script>
+            function highMenu(obj,sp) {
+                obj.style.color = "orange";
+                document.getElementById(sp).style.display = '';
+            }
+            function backToNormalMenu(obj,sp) {
+                obj.style.color = "rgb(200,200,200)";
+                document.getElementById(sp).style.display = 'none';
+            }
+        </script>
+        <title>AWSee</title>
+    </head>
+    <body>
+        <header>
+            <h1>./ AWSee <i class="fas fa-toolbox"></i></h1>
+            <h2 style="margin-top: -10px;font-size: 26px;">$:~ awsee -p euwest -r dev</i></h2>
+        </header>
+        <table>
+            <tr valign="top">
+                <td>
+                    <p style="line-height: 2.3;margin-top: -15px;margin-left: 10px;width:200px;">
+                        <a class="menu" href="#overview"     onmouseover="javascript:highMenu(this,'m0');" onmouseout="javascript:backToNormalMenu(this,'m0');"><span id="m0" style="display:none;"><i class="fa fa-location-arrow"></i>&nbsp;</span> Overview</a><br>
+                        <a class="menu" href="#quickstart"   onmouseover="javascript:highMenu(this,'m3');" onmouseout="javascript:backToNormalMenu(this,'m3');"><span id="m3" style="display:none;"><i class="fa fa-location-arrow"></i>&nbsp;</span> Quick Start</a><br>
+                        <a class="menu" href="#docs"         onmouseover="javascript:highMenu(this,'m5');" onmouseout="javascript:backToNormalMenu(this,'m5');"><span id="m5" style="display:none;"><i class="fa fa-location-arrow"></i>&nbsp;</span> Docs</a><br>
+                        <a class="menu" href="#versions"     onmouseover="javascript:highMenu(this,'m6');" onmouseout="javascript:backToNormalMenu(this,'m6');"><span id="m6" style="display:none;"><i class="fa fa-location-arrow"></i>&nbsp;</span> Versions</a><br>
+                        <a class="menu" href="#notes"        onmouseover="javascript:highMenu(this,'m7');" onmouseout="javascript:backToNormalMenu(this,'m7');"><span id="m7" style="display:none;"><i class="fa fa-location-arrow"></i>&nbsp;</span> Notes</a><br>
+                        <a class="menu" href="#contact"      onmouseover="javascript:highMenu(this,'m8');" onmouseout="javascript:backToNormalMenu(this,'m8');"><span id="m8" style="display:none;"><i class="fa fa-location-arrow"></i>&nbsp;</span> Contact</a><br>
+                    </p>
+                </td>
+                <td>
+                    <div  style="margin-left: 30px;margin-right: 150px">
+                        <span id="overview"/>
+                        <table>
+                            <tr style="vertical-align: top;">
+                                <td>
+                                    <p align="justify">
+                                        <a href="images/gif_01.gif" target="_blank">
+                                            <img class="overview1" src="images/gif_01.gif"/>
+                                        </a>
+                                    </p>
+                                </td>
+                                <td style="padding-left: 20px;padding-right: 140px">
+                                    <p align="justify">
+                                       Command line tool that helps handle multiple <i class="fab fa-aws"></span></i> Account Credentials (its Roles and MFAs), when working with AWSCLI sessions.
+                                    </p>
+                                    <p align="justify">
+                                        It opens and controls AWS Sessions using a command-line tool, allowing performing one or all of the following tasks:
+                                        <ul>
+                                            <li>Start session using a MFA Token</li>
+                                        </ul>
+                                        <ul style="margin-top:-12px">
+                                            <li>Assume a Role</li>
+                                        </ul>
+                                        <ul style="margin-top:-12px">
+                                            <li>Open a session in the same or another terminal window</li>
+                                        </ul>
+                                        <ul style="margin-top:-12px">
+                                            <li>Keep track of session information (expiration)</li>
+                                        </ul>
+                                        <ul style="margin-top:-12px">
+                                            <li>"Injects" alias/DOSKEY commands in your opened session, that's configurable. Entries in file, examples:</li>
+                                        </ul>
+                                        <div style="color:rgb(190, 155, 67);margin-left:100px;margin-right:180px;margin-top:-14px;margin-bottom:-15px;font-size:20px;background-color:rgba(0, 0, 0, 0.2);font-family: Consolas; font-size: 12px;padding: 3px 0px 3px 0px;">
+                                            <ul>
+                                                <li style="margin-left:2em; padding-bottom: 0;">alias s3='<font style="color: rgb(255, 166, 0);">aws s3 ls</font>'</li>
+                                            </ul>
+                                            <ul>
+                                                <li style="margin-left:2em; padding-bottom: 0;">alias info='<font style="color: rgb(255, 166, 0);">awsee -i</font>'</li>
+                                            </ul>
+                                        </div>
+                                   </p>
+                                   <p align="justify">
+                                    Plus, it also tries (if allowed by your AWS Polices) automatically bring and save locally information about your MFA-Devices to be used later on. 
+                                   </p>
+                                   <p align="justify">
+                                    When not possible to retrieve account information automactically (due to security reasons), you still can register it locally using this tool. You can save and keep them updated, to help to deal with your AWS Sessions, like:
+                                    <ul>
+                                        <li>MFA Devices</li>
+                                    </ul>
+                                    <ul style="margin-top:-12px">
+                                        <li>Roles</li>
+                                    </ul>
+                                   </p>
+                                </td>
+                            </tr>
+                        </table>
+                        <br>
+                        <p align="justify">
+                            <span class="arrow">--></span>Save and mantain your credential profiles associated with their respective Roles and MFA Devices.<br>You can use the command "synchronize" to remotely bring this information (if allowed by your AWS Polices), check help documentation.<br>
+                            <a href="images/gif_02.gif" target="_blank">
+                                <img class="overview1" src="images/gif_02.gif"/>
+                            </a>
+                        </p>
+                        <br>
+                        <p align="justify">
+                            <span class="arrow">--></span>Here's an example of how to registry and associate with a credential profile a new MFA Device<br>
+                            <a href="images/gif_03.gif" target="_blank">
+                                <img class="overview1" src="images/gif_03.gif"/>
+                            </a>
+                        </p>
+
+                        <br>
+
+                        <header>
+                            <h3 id="quickstart"><i class="fa fa-mouse-pointer"></i> Quick Start</h3>
+                        </header>
+                        <p align="justify">
+                            <font class="bullet">--> </font><span class="subtitle">Install & Run...</span><br>
+                            <span style="margin-left: 40px;">
+                                <span class="bullet">
+                                    <div style="color:rgb(190, 155, 67);margin-left:40px;margin-right: 300px;margin-top:-14px;margin-bottom:-15px;font-size:20px;background-color:black;font-family: Consolas;padding: 10px 10px 10px 20px;">
+                                        <span style="color:gray"> </span><br>
+                                        <span style="color:gray"># </span><br>
+                                        <span style="color:gray"># As a Python application, to install enter...</span><br>
+                                        <span>$:~ pip install awsee</span><br><br>
+                                        <span style="color:gray"> </span><br>
+                                        <span style="color:gray"># </span><br>
+                                        <span style="color:gray"># As pre-requisite, your AWSCLI must be configured already...</span><br>
+                                        <span>$:~ cat ~/.aws/credentials</span><br>
+                                        <span style="color:rgb(26, 88, 73)">> [default]</span><br>
+                                        <span style="color:rgb(26, 88, 73)">> aws_access_key_id = YOUR_ACCESS_KEY</span><br>
+                                        <span style="color:rgb(26, 88, 73)">> aws_secret_access_key = YOUR_SECRET_KEY</span><br><br>
+                                        <span style="color:gray"></span><br>
+                                        <span style="color:gray"># And optionally...</span><br>
+                                        <span>$:~ cat ~/.aws/config</span><br>
+                                        <span style="color:rgb(26, 88, 73)">> [default]</span><br>
+                                        <span style="color:rgb(26, 88, 73)">> region=us-east-1</span><br><br>
+                                        <span style="color:gray"></span><br>
+                                        <span style="color:gray"># </span><br>
+                                        <span style="color:gray"># To get started, try to access your default profile...</span><br>
+                                        <span>$:~ awsee</span><br>
+                                        <span style="color:gray"># The first execution, it will attempt synchronize</span><br>
+                                        <span style="color:gray"># your MFA Device with the configured Credentials</span><br>
+                                        <span style="color:gray"></span><br>
+                                    </div>
+                                </span>
+                            </span>
+                        </p>
+
+                        <br>
+
+                        <header>
+                            <h3  id="docs"><i class="fa fa-mouse-pointer"></i> Docs</h3>
+                        </header>
+                        <p align="justify">
+                            The complete help/manual is available inside the <font style="color:goldenrod"><b>AWSee</b></font> tool itself, check it out:<br><br>
+                        </p>
+                        <span style="margin-left: 40px;">
+                            <span class="bullet">
+                                <div style="color:#be9b43;margin-left:40px;margin-right: 300px;margin-top:-14px;margin-bottom:-15px;background-color:black;font-size:20px;font-family:Consolas;padding: 10px 10px 10px 20px;">
+                                    <span style="color:gray"> </span><br>
+                                    <span style="color:gray"># To show the complete version...</span><br>
+                                    <span>$:~ awsee --help</span><br>
+                                    <span style="color:gray"> </span><br>
+                                    <span style="color:gray"># To show a short version...</span><br>
+                                    <span>$:~ awsee -h</span><br>
+                                    <span style="color:gray"> </span><br>
+                                    <span style="color:gray"># Show how to use, see below:</span><br>
+                                    <span>$:~ awsee -u</span><br>
+                                    <span>
+                                     <pre>
+<font style="color:goldenrod">awsee</font> <font style="color:blueviolet">[TOKEN-MFA] [-p profile] [-r role] [-nt or --new-term]</font>
+<font style="color:magenta">Examples:</font>
+    <font style="color:goldenrod">awsee</font> <font style="color:blueviolet">857946                 </font>      <font style="color:magenta">Open AWS Session with default profile with your six-digit MFA Token     </font>
+    <font style="color:goldenrod">awsee</font> <font style="color:blueviolet">857946 -p infra        </font>      <font style="color:magenta">Open AWS Session with the passed profile using your six-digit MFA Token</font>
+    <font style="color:goldenrod">awsee</font> <font style="color:blueviolet">857946 -p infra -r prod</font>      <font style="color:magenta">Open AWS Session with the passed profile using your six-digit MFA Token</font>
+                                       <font style="color:magenta">and immediatelly assume the passed role at this new session</font>
+    <font style="color:goldenrod">awsee</font>                             <font style="color:magenta"> Open AWS Session with default profile, it will check if needs MFA</font>
+    <font style="color:goldenrod">awsee</font><font style="color:blueviolet"> -p dev              </font>         <font style="color:magenta">Open AWS Session with the passed profile, asks for MFA if needed</font>
+    <font style="color:goldenrod">awsee</font><font style="color:blueviolet"> -r developer        </font>         <font style="color:magenta">Assume a Role inside the current AWS Session</font>
+    <font style="color:goldenrod">awsee</font><font style="color:blueviolet"> -p dev  -r developer</font>         <font style="color:magenta">Open AWS Session with the passed profile, and following assume the role</font>
+    <font style="color:goldenrod">awsee</font><font style="color:blueviolet"> -p prod -r admin    </font>         <font style="color:magenta">Open AWS Session with the passed profile, and following assume the rol</font>
+    <font style="color:goldenrod">awsee</font><font style="color:blueviolet"> -nt or --new-terminal</font>        <font style="color:magenta">When opening an AWS Session, will do it in a new terminal</font>
+    <font style="color:goldenrod">awsee</font><font style="color:blueviolet"> -h  or --help        </font>        <font style="color:magenta">Show this and all auxiliary functions (use --help for more information)</font>
+    <font style="color:goldenrod">awsee</font><font style="color:blueviolet"> -u  or --usage       </font>        <font style="color:magenta">Show only how to use, not the auxiliary function</font>
+    <font style="color:goldenrod">awsee</font><font style="color:blueviolet"> [FUNCTION]           </font>        <font style="color:magenta">Execute an auxiliary function, see below for all available options</font>
+                                    </pre> 
+                                    <span style="color:gray"># Use the <font style="color:goldenrod">awsee</font> <font style="color:magenta">--help</font> to see all the functions and their usage</span><br>  
+                                    </span>
+                                    <span style="color:gray"></span><br>    
+                                </div>
+                            </span>
+                        </span>
+                        <br><br>
+
+                        <header>
+                            <h3  id="versions"><i class="fa fa-mouse-pointer"></i> Versions</h3>
+                        </header>
+                        <p align="justify">
+                            <ul>
+                                <li><span class="version">v0.0.14</span> <span class="dataversion">(Apr 11, 2021)</span> - First version released 
+                                    <!-- <ul>
+                                        <li><i class="fa fa-angle-double-right"></i><span class="describeversion">&nbsp;&nbsp;Still some ideas to implement</span></li>
+                                    </ul> -->
+                                </li>
+                            </ul>
+                        </p>
+
+                        <br>
+
+                        <header>
+                            <h3  id="notes"><i class="fa fa-mouse-pointer"></i> Notes</h3>
+                        </header>
+                        <p align="justify">
+                            <span class="arrow">###</span><span class="subtitle">&nbsp;&nbsp;Post-Installation Linux Environment</span><br><span>
+                            At the moment (at least), there are some post-steps that must be performed after installing <font style="color:goldenrod"><b>AWSee</b></font> in a Linux environment</span>
+                            <span style="margin-left: 140px;">
+                                <span class="bullet">
+                                    <div style="color:#be9b43;margin-left:40px;margin-right: 300px;margin-top:-14px;margin-bottom:-15px;background-color:black;font-size:20px;font-family:Consolas;padding: 10px 10px 10px 20px;">
+                                        <span style="color:gray"> </span><br>
+                                        <span style="color:gray"># After installation (pip install awsee), choose one of the options below that works best for you:</span><br>
+                                        <span style="color:gray"> </span><br>
+                                        <span style="color:gray"><i># MANUALLY (Option 1)</i></span><br>
+                                        <span>$:~ AWSEE_SCRIPT=$(which awsee)</span><br>
+                                        <span>$:~ chmod +x $AWSEE_SCRIPT</span><br>
+                                        <span>$:~ alias awsee='source awsee'  <font style="color:orangered"><i>#also add this to your ~/.bashrc</i></font></span><br>
+                                        <span style="color:gray"> </span><br>
+                                        <span style="color:gray"><i># MANUALLY (Option 2)</i></span><br>
+                                        <span>$:~ AWSEE_SCRIPT="$(python -c 'import os, sys; print(os.path.dirname(sys.executable))')/awsee"</span><br>
+                                        <span>$:~ chmod +x $AWSEE_SCRIPT</span><br>
+                                        <span>echo "alias awsee='source awsee'" >> ~/.bashrc</span><br>
+                                        <span>alias awsee='source awsee'</span><br>
+                                        <span style="color:gray"> </span><br>
+                                        <span style="color:gray"><font style="color:orangered"><b># OR...</b></font></span><br>
+                                        <span style="color:gray"> </span><br>
+                                        <span style="color:gray"><i># AUTOMATICALLY (Option 3)</i></span><br>
+                                        <span>$:~ curl -s https://raw.githubusercontent.com/ualter/mybashfunctions/main/post-install-awsee.sh | bash</span><br>
+                                        <span style="color:gray"> </span><br>
+                                    </div>
+                                </span>
+                            </span>
+                        </p>
+
+                        <br>
+
+                        <header>
+                            <h3  id="contact"><i class="fa fa-mouse-pointer"></i> Contact</h3>
+                        </header>
+                        <p align="justify">
+                            <i class="fab fa-linkedin"></i>&nbsp;&nbsp; <a href="http://linkedin.com/in/ualter" target="_blank">http://linkedin.com/in/ualter</a><br>
+                            <i class="fa fa-envelope"></i>&nbsp;&nbsp; <font style="color:goldenrod">ualter.junior@gmail.com</font><br>
+                            <i class="fab fa-paypal"></i>&nbsp;&nbsp; <a href="http://paypal.me/ualter" target="_blank">paypal.me/ualter</a> <font style="font-size: 15px;"> --> just in case you'd like to pay me a coffee for the work <i class="fas fa-smile"></i></font><br>
+                            <br><br><br><br>
+                        </p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+    </body>
+</html>
+
