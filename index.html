@@ -205,7 +205,13 @@
                         </header>
                         <p align="justify">
                             <ul>
-                                <li><span class="version">v0.0.16</span> <span class="dataversion">(Apr 11, 2021)</span> - First version released 
+                                <li><span class="version">v0.0.22</span> <span class="dataversion">(Mar 17, 2021)</span> - Bug fixing:
+                                    <ul>
+                                        <li><span style="color: rgb(255, 124, 124);"><i class="fa fa-bug"></i></span> <span class="describeversion">&nbsp;Start session in GitBash.</span></li>
+                                        <li><span style="color: rgb(255, 124, 124);"><i class="fa fa-bug"></i></span> <span class="describeversion">&nbsp;Show information in GitBash.</span></li>
+                                    </ul>
+                                </li>
+                                <li><span class="version">v0.0.16</span> <span class="dataversion">(Mar 11, 2021)</span> - First version released 
                                     <!-- <ul>
                                         <li><i class="fa fa-angle-double-right"></i><span class="describeversion">&nbsp;&nbsp;Still some ideas to implement</span></li>
                                     </ul> -->
@@ -230,12 +236,13 @@
                                         <span style="color:gray"><i># MANUALLY (Option 1)</i></span><br>
                                         <span>$:~ AWSEE_SCRIPT=$(which awsee)</span><br>
                                         <span>$:~ chmod +x $AWSEE_SCRIPT</span><br>
-                                        <span>$:~ alias awsee='source awsee'  <font style="color:orangered"><i>#also add this to your ~/.bashrc</i></font></span><br>
+                                        <span>$:~ echo "alias awsee='source awsee'" >> ~/.bashrc</span><font style="color:orangered"><i> #add this to your ~/.bashrc</i></font></span><br>
+                                        <span>$:~ alias awsee='source awsee'<br>
                                         <span style="color:gray"> </span><br>
                                         <span style="color:gray"><i># MANUALLY (Option 2)</i></span><br>
                                         <span>$:~ AWSEE_SCRIPT="$(python -c 'import os, sys; print(os.path.dirname(sys.executable))')/awsee"</span><br>
                                         <span>$:~ chmod +x $AWSEE_SCRIPT</span><br>
-                                        <span>$:~ echo "alias awsee='source awsee'" >> ~/.bashrc</span><br>
+                                        <span>$:~ echo "alias awsee='source awsee'" >> ~/.bashrc</span><font style="color:orangered"><i> #add this to your ~/.bashrc</i></font></span><br>
                                         <span>$:~ alias awsee='source awsee'</span><br>
                                         <span style="color:gray"> </span><br>
                                         <span style="color:gray"><font style="color:orangered"><b># OR...</b></font></span><br>
